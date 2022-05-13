@@ -19,6 +19,17 @@ public class Information {
     @Column(name = "url", length = 100)
     private String url;
 
+    @Column(name = "rewriting", length = 100)
+    private String rewriting;
+
+    public String getRewriting() {
+        return rewriting;
+    }
+
+    public void setRewriting(String rewriting) {
+        this.rewriting = rewriting;
+    }
+
     public String getUrl() {
         return url;
     }

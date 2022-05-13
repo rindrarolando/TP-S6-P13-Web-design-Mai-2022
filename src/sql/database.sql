@@ -25,3 +25,5 @@ CREATE TABLE comments (
     posted_on DATE,
     can_be_posted BOOLEAN
 );
+ALTER TABLE informations ADD rewriting VARCHAR(100);
+ALTER TABLE news ADD rewriting VARCHAR(100);
