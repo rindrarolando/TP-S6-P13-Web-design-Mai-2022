@@ -1,20 +1,17 @@
 package com.miniprojet.rechauffementclimatique.entities;
 
-import javax.persistence.*;
 
-@Entity
-@Table(name = "administrator")
 public class Administrator {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
+
     private Integer id;
 
-    @Column(name = "login", length = 50)
+
     private String login;
 
-    @Column(name = "password")
     private String password;
+
+    public Administrator() {
+    }
 
     public String getPassword() {
         return password;
@@ -38,5 +35,16 @@ public class Administrator {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Administrator(Integer id, String login, String password) {
+        this.id = id;
+        this.login = login;
+        this.password = password;
+    }
+
+    public Administrator(String login, String password) {
+        this.login = login;
+        this.password = password;
     }
 }

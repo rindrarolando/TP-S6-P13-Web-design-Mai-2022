@@ -1,23 +1,14 @@
 package com.miniprojet.rechauffementclimatique.entities;
 
-import javax.persistence.*;
 import java.time.LocalDate;
 
-@Entity
-@Table(name = "comments")
 public class Comment {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
     private Integer id;
 
-    @Column(name = "description")
     private String description;
 
-    @Column(name = "posted_on")
     private LocalDate postedOn;
 
-    @Column(name = "can_be_posted")
     private Boolean canBePosted;
 
     public Boolean getCanBePosted() {
@@ -50,5 +41,22 @@ public class Comment {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Comment(Integer id, String description, LocalDate postedOn, Boolean canBePosted) {
+        this.id = id;
+        this.description = description;
+        this.postedOn = postedOn;
+        this.canBePosted = canBePosted;
+    }
+
+    public Comment(){
+
+    }
+
+    public Comment(String description, LocalDate postedOn, Boolean canBePosted) {
+        this.description = description;
+        this.postedOn = postedOn;
+        this.canBePosted = canBePosted;
     }
 }

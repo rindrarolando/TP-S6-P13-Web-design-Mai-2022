@@ -1,26 +1,22 @@
 package com.miniprojet.rechauffementclimatique.entities;
 
-import javax.persistence.*;
 
-@Entity
-@Table(name = "informations")
 public class Information {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
+
     private Integer id;
 
-    @Column(name = "title")
+
     private String title;
 
-    @Column(name = "description")
+
     private String description;
 
-    @Column(name = "url", length = 100)
     private String url;
 
-    @Column(name = "rewriting", length = 100)
     private String rewriting;
+
+    public Information() {
+    }
 
     public String getRewriting() {
         return rewriting;
@@ -60,5 +56,20 @@ public class Information {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Information(Integer id, String title, String description, String url, String rewriting) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.url = url;
+        this.rewriting = rewriting;
+    }
+
+    public Information(String title, String description, String url, String rewriting) {
+        this.title = title;
+        this.description = description;
+        this.url = url;
+        this.rewriting = rewriting;
     }
 }

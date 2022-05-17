@@ -1,31 +1,26 @@
 package com.miniprojet.rechauffementclimatique.entities;
 
-import javax.persistence.*;
 import java.time.LocalDate;
 
-@Entity
-@Table(name = "news")
 public class News {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
+
     private Integer id;
 
-    @Column(name = "title")
+
     private String title;
 
-    @Column(name = "description")
+
     private String description;
 
-    @Column(name = "posted_on")
+
     private LocalDate postedOn;
 
-    @Column(name = "url", length = 100)
     private String url;
 
-    @Column(name = "rewriting", length = 100)
     private String rewriting;
 
+    public News() {
+    }
     public String getRewriting() {
         return rewriting;
     }
@@ -72,5 +67,22 @@ public class News {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public News(Integer id, String title, String description, LocalDate postedOn, String url, String rewriting) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.postedOn = postedOn;
+        this.url = url;
+        this.rewriting = rewriting;
+    }
+
+    public News(String title, String description, LocalDate postedOn, String url, String rewriting) {
+        this.title = title;
+        this.description = description;
+        this.postedOn = postedOn;
+        this.url = url;
+        this.rewriting = rewriting;
     }
 }
